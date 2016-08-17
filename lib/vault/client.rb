@@ -381,7 +381,7 @@ module Vault
 
       begin
         return yield retries, exception
-      rescue *rescued => e
+      rescue *rescued.flatten => e
         exception = e
 
         retries += 1
